@@ -13,10 +13,12 @@
 <body class="game">
     <div class="game-container">
         <header>
-            <h1>Memory Halloween</h1>
+            <h1><i class="fa-solid fa-ghost"></i> Memory Halloween <i class="fa-solid fa-spider"></i></h1>
             <p>Joueur : <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></p>
             <p>Nombre de paires : <?= $_SESSION['pairCount'] ?></p>
+            <p id="timer">Temps : 0s</p>
         </header>
+
 
         <section class="board">
             <?php foreach ($cards as $index => $card): ?>

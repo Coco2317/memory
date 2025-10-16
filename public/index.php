@@ -18,6 +18,9 @@ switch ($page) {
     case 'score':
         (new ScoreController())->index();
         break;
+    case 'scoreSave':
+        (new ScoreController())->saveScore();
+        break;
     case 'profile':
         (new UserController())->profile();
         break;

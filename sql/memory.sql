@@ -1,0 +1,11 @@
+CREATE DATABASE IF NOT EXISTS memory_db CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE memory_db;
+
+CREATE TABLE IF NOT EXISTS scores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    score INT NOT NULL,
+    time_seconds INT NOT NULL,
+    attempts INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
