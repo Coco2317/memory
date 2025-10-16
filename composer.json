@@ -1,0 +1,12 @@
+{
+  "name": "nicole/memory",
+  "description": "Memory Halloween",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "require": {
+    "ext-pdo": "*"
+  }
+}
