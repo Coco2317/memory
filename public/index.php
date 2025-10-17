@@ -27,4 +27,10 @@ switch ($page) {
     default:
         (new HomeController())->index();
         break;
+        
+    case 'logout':
+    $controller = new \App\Controllers\UserController();
+    $controller->logout();
+    break;
+
 }

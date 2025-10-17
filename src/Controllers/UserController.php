@@ -19,4 +19,13 @@ class UserController
 
         require_once __DIR__ . '/../Views/profile.php';
     }
+
+    public function logout(): void
+{
+    session_unset();    // Supprime toutes les variables de session
+    session_destroy();  // Détruit la session
+    header('Location: ?page=home'); // Retour à la page d’accueil
+    exit;
+}
+
 }

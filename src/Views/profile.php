@@ -57,6 +57,8 @@
             <a href="?page=home" class="btn-score"><i class="fa-solid fa-house"></i> Accueil</a>
             <a href="?page=score" class="btn-score"><i class="fa-solid fa-ranking-star"></i> Classement</a>
             <a href="?page=game&replay=1" class="btn-restart"><i class="fa-solid fa-play"></i> Nouvelle partie</a>
+            <a href="?page=logout" class="btn-profile"><i class="fa-solid fa-door-open"></i> Quitter</a>
+
         </div>
     </div>
     <?php include __DIR__ . '/footer.php'; ?>
