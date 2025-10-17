@@ -74,25 +74,31 @@ function showWinMessage(score, time, tries) {
             <p><i class="fa-solid fa-stopwatch"></i> Temps : ${time}s</p>
             <p><i class="fa-solid fa-rotate"></i> Tentatives : ${tries}</p>
             <div class="win-buttons">
-                <a href="?page=game" class="btn-restart"><i class="fa-solid fa-rotate-right"></i> Rejouer</a>
-                <a href="?page=score" class="btn-score"><i class="fa-solid fa-ranking-star"></i> Voir classement</a>
+                <a href="?page=game" class="btn-restart">
+                    <i class="fa-solid fa-rotate-right"></i> Rejouer
+                </a>
+                <a href="?page=score" class="btn-score">
+                    <i class="fa-solid fa-ranking-star"></i> Classement
+                </a>
+                <a href="?page=profile" class="btn-profile">
+                    <i class="fa-solid fa-user"></i> Profil joueur
+                </a>
             </div>
         </div>
     `;
 
-// Enregistre le score en base via fetch POST
-fetch('?page=scoreSave', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({
-        username: document.querySelector('header strong').textContent,
-        score: score,
-        time: time,
-        attempts: tries
-    })
-});
-
-
+    // Enregistre le score en base via fetch POST
+    fetch('?page=scoreSave', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+            username: document.querySelector('header strong').textContent,
+            score: score,
+            time: time,
+            attempts: tries
+        })
+    });
 
     document.body.appendChild(overlay);
 }
+

@@ -36,5 +36,6 @@
 
         <a href="?page=home" class="btn-score"><i class="fa-solid fa-house"></i> Retour à l'accueil</a>
     </div>
+    <?php include __DIR__ . '/footer.php'; ?>
 </body>
 </html>

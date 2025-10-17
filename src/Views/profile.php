@@ -50,5 +50,6 @@
             <a href="?page=game" class="btn-restart"><i class="fa-solid fa-play"></i> Nouvelle partie</a>
         </div>
     </div>
+    <?php include __DIR__ . '/footer.php'; ?>
 </body>
 </html>

@@ -1,59 +1,27 @@
-*/* General styles */
+/* === STYLES GLOBAUX === */
 
-body.home {
-    background: url('../img/background_hall.jpg') no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px #ff6f00;
-}
-
-h1 {
-    margin-bottom: 20px;
-    color: #ff9800;
-}
-
-.start-form {
+html, body {
+    height: 100%;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 250px;
-    margin: 0 auto;
 }
 
-input, select, button {
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
+body > .container {
+    flex: 1;
 }
 
-button.btn {
-    background: #ff6f00;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button.btn:hover {
-    background: #ff8f00;
-}
-
-
-/* Game styles */
-body.game {
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
     background: url('../img/background_hall.jpg') no-repeat center center fixed;
     background-size: cover;
+}
+
+/* === PAGE DU JEU === */
+body.game {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,8 +42,7 @@ body.game {
     margin: 20px auto;
 }
 
-/* Card styles */
-
+/* === CARTES === */
 .card {
     perspective: 1000px;
     cursor: pointer;
@@ -110,7 +77,7 @@ body.game {
     transform: rotateY(180deg);
 }
 
-/* === VICTORY OVERLAY === */
+/* === POPUP DE VICTOIRE === */
 .win-overlay {
     position: fixed;
     top: 0;
@@ -224,4 +191,36 @@ body.game {
     display: flex;
     justify-content: center;
     gap: 15px;
+}
+
+.btn-profile {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    background: #1976d2;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-profile:hover {
+    background: #2196f3;
+}
+
+/* === FOOTER GLOBAL === */
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    margin-top: auto;
+    padding: 10px 0;
+    letter-spacing: 0.3px;
+}
+
+footer span {
+    color: #ff9800;
+    font-weight: 600;
+    text-shadow: 0 0 6px rgba(255, 152, 0, 0.4);
 }
