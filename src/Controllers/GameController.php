@@ -7,13 +7,20 @@ class GameController
 {
     public function index(): void
     {
-        // Récupère les infos du formulaire de l'accueil
-        $username = $_POST['username'] ?? 'Invité';
-        $pairCount = isset($_POST['pairs']) ? (int)$_POST['pairs'] : 3;
+        // Si le joueur clique sur "Rejouer"
+        if (isset($_GET['replay']) && isset($_SESSION['username'], $_SESSION['pairCount'])) {
+            $username = $_SESSION['username'];
+            $pairCount = (int) $_SESSION['pairCount'];
+        } 
+        // Sinon, il vient de la page d’accueil (nouvelle partie)
+        else {
+            $username = $_POST['username'] ?? 'Invité';
+            $pairCount = isset($_POST['pairs']) ? (int)$_POST['pairs'] : 3;
 
-        // Enregistre dans la session
-        $_SESSION['username'] = htmlspecialchars($username);
-        $_SESSION['pairCount'] = $pairCount;
+            // Enregistre dans la session
+            $_SESSION['username'] = htmlspecialchars($username);
+            $_SESSION['pairCount'] = $pairCount;
+        }
 
         // Crée une instance du jeu
         $game = new Game($pairCount);

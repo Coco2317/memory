@@ -10,6 +10,12 @@
 </head>
 
 <body class="game">
+
+    <nav class="global-nav">
+        <a href="?page=home" title="Accueil"><i class="fa-solid fa-house"></i></a>
+        <a href="?page=profile" title="Profil"><i class="fa-solid fa-user"></i></a>
+    </nav>
+
     <div class="container">
         <h1><i class="fa-solid fa-ranking-star"></i> Classement des meilleurs sorciers</h1>
 
@@ -34,7 +40,14 @@
             </tbody>
         </table>
 
-        <a href="?page=home" class="btn-score"><i class="fa-solid fa-house"></i> Retour à l'accueil</a>
+        <br>
+
+        <a href="?page=game&replay=1" class="btn-restart">
+            <i class="fa-solid fa-rotate-right"></i> Rejouer
+        </a>
+
+
+
     </div>
     <?php include __DIR__ . '/footer.php'; ?>
 </body>

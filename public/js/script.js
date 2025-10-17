@@ -59,9 +59,10 @@ function showWinMessage(tries) {
             <p>Score : <strong>${score}</strong></p>
             <p><i class="fa-solid fa-rotate"></i> Tentatives : ${tries}</p>
             <div class="win-buttons">
-                <a href="?page=game" class="btn-restart">
-                    <i class="fa-solid fa-rotate-right"></i> Rejouer
-                </a>
+            
+                <a href="?page=game&replay=1" class="btn-restart">
+            <i class="fa-solid fa-rotate-right"></i> Rejouer
+        </a>
                 <a href="?page=score" class="btn-score">
                     <i class="fa-solid fa-ranking-star"></i> Classement
                 </a>

@@ -24,7 +24,6 @@
                 <tr>
                     <th>Date</th>
                     <th>Score</th>
-                    <th>Temps (s)</th>
                     <th>Tentatives</th>
                 </tr>
             </thead>
@@ -36,7 +35,6 @@
                         <tr>
                             <td><?= date('d/m/Y H:i', strtotime($row['created_at'])) ?></td>
                             <td><?= $row['score'] ?></td>
-                            <td><?= $row['time_seconds'] ?></td>
                             <td><?= $row['attempts'] ?></td>
                         </tr>
                     <?php endforeach; ?>

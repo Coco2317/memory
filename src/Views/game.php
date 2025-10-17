@@ -53,7 +53,10 @@
                         <option value="9" <?= $_SESSION['pairCount'] == 9 ? 'selected' : '' ?>>Difficile (18 cartes)</option>
                         <option value="12" <?= $_SESSION['pairCount'] == 12 ? 'selected' : '' ?>>Expert (24 cartes)</option>
                     </select>
-                    <button type="submit" class="btn-restart"><i class="fa-solid fa-rotate-right"></i> Rejouer</button>
+
+                    <a href="?page=game&replay=1" class="btn-restart">
+                        <i class="fa-solid fa-rotate-right"></i> Rejouer
+                    </a>
                 </form>
             </div>
 
