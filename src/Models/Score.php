@@ -13,16 +13,15 @@ class Score
         $this->db = Database::getConnection();
     }
 
-    public function save(string $username, int $score, int $time, int $attempts): bool
+    public function save(string $username, int $score, int $attempts): bool
     {
         $stmt = $this->db->prepare('
-            INSERT INTO scores (username, score, time_seconds, attempts)
+            INSERT INTO scores (username, score, attempts)
             VALUES (:username, :score, :time_seconds, :attempts)
         ');
         return $stmt->execute([
             ':username' => htmlspecialchars($username),
             ':score' => $score,
-            ':time_seconds' => $time,
             ':attempts' => $attempts
         ]);
     }

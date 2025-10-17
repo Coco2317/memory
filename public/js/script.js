@@ -5,19 +5,7 @@ let matchedPairs = 0;
 let attempts = 0;
 const totalPairs = cards.length / 2;
 
-// Timer logic
-let startTime = Date.now();
-let timer = setInterval(updateTimer, 1000);
-
-function updateTimer() {
-    const elapsed = Math.floor((Date.now() - startTime) / 1000);
-    const timerDisplay = document.getElementById('timer');
-    if (timerDisplay) {
-        timerDisplay.textContent = `Temps : ${elapsed}s`;
-    }
-}
-
-// click event for cards
+// Gestion du clic sur les cartes
 cards.forEach(card => {
     card.addEventListener('click', () => {
         // On ignore si déjà retournée ou si 2 cartes sont déjà en jeu
@@ -48,29 +36,27 @@ cards.forEach(card => {
     });
 });
 
-// check if all pairs are matched
+// Vérifie si toutes les paires sont trouvées
 function checkWin() {
     if (matchedPairs === totalPairs) {
-        clearInterval(timer);
-        const totalTime = Math.floor((Date.now() - startTime) / 1000);
-
         setTimeout(() => {
-            showWinMessage(score, totalTime, attempts);
+            showWinMessage(attempts);
         }, 500);
     }
 }
 
+// Affiche le message de victoire et enregistre le score
+function showWinMessage(tries) {
+    // Calcul du score basé uniquement sur les tentatives
+    const score = Math.max(1000 - (tries * 30), 100);
 
-
-// Display win message
-function showWinMessage(score, time, tries) {
+    // Création de la pop-up de victoire
     const overlay = document.createElement('div');
     overlay.className = 'win-overlay';
     overlay.innerHTML = `
         <div class="win-box">
             <h2><i class="fa-solid fa-trophy"></i> Bravo !</h2>
             <p>Score : <strong>${score}</strong></p>
-            <p><i class="fa-solid fa-stopwatch"></i> Temps : ${time}s</p>
             <p><i class="fa-solid fa-rotate"></i> Tentatives : ${tries}</p>
             <div class="win-buttons">
                 <a href="?page=game" class="btn-restart">
@@ -86,18 +72,16 @@ function showWinMessage(score, time, tries) {
         </div>
     `;
 
-    // Enregistre le score en base via fetch POST
+    // Enregistrement du score via fetch POST
     fetch('?page=scoreSave', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
             username: document.querySelector('header strong').textContent,
             score: score,
-            time: time,
             attempts: tries
         })
     });
 
     document.body.appendChild(overlay);
 }
-

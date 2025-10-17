@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Models\Score;
@@ -15,7 +16,7 @@ class ScoreController
 
     public function saveScore(): void
     {
-        if (!isset($_POST['username'], $_POST['score'], $_POST['time'], $_POST['attempts'])) {
+        if (!isset($_POST['username'], $_POST['score'], $_POST['attempts'])) {
             http_response_code(400);
             exit('Données manquantes');
         }
@@ -24,7 +25,6 @@ class ScoreController
         $scoreModel->save(
             $_POST['username'],
             (int) $_POST['score'],
-            (int) $_POST['time'],
             (int) $_POST['attempts']
         );
     }
