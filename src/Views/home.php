@@ -24,12 +24,16 @@
             <label for="username">Votre pseudo :</label>
             <input type="text" id="username" name="username" required>
 
-            <label for="pairs">Nombre de paires :</label>
+
+            <label for="pairs">Niveau de difficulté :</label>
             <select id="pairs" name="pairs">
-                <?php for ($i = 3; $i <= 12; $i++): ?>
-                    <option value="<?= $i ?>"><?= $i ?></option>
-                <?php endfor; ?>
+                <option value="3">Facile (6 cartes)</option>
+                <option value="6">Moyen (12 cartes)</option>
+                <option value="9">Difficile (18 cartes)</option>
+                <option value="12">Expert (24 cartes)</option>
             </select>
+
+
 
             <button type="submit" class="btn">Jouer</button>
         </form>

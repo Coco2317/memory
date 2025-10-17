@@ -7,19 +7,61 @@
     <title>Memory Halloween</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 
 <body class="game">
+
+    <!-- === NAVIGATION COMMUNE === -->
+    <nav class="global-nav">
+        <a href="?page=home" title="Accueil"><i class="fa-solid fa-house"></i></a>
+        <a href="?page=profile" title="Profil"><i class="fa-solid fa-user"></i></a>
+    </nav>
+
+    <!-- === CONTENEUR DU JEU === -->
     <div class="game-container">
-        <header>
+
+        <!-- === EN-TÊTE DU JEU === -->
+        <header class="game-header">
             <h1><i class="fa-solid fa-ghost"></i> Memory Halloween <i class="fa-solid fa-spider"></i></h1>
-            <p>Joueur : <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></p>
-            <p>Nombre de paires : <?= $_SESSION['pairCount'] ?></p>
-            <p id="timer">Temps : 0s</p>
+
+            <?php
+            function getDifficultyInfo(int $pairCount): array
+            {
+                return match ($pairCount) {
+                    3 => ['label' => 'Facile', 'cards' => 6],
+                    6 => ['label' => 'Moyen', 'cards' => 12],
+                    9 => ['label' => 'Difficile', 'cards' => 18],
+                    12 => ['label' => 'Expert', 'cards' => 24],
+                    default => ['label' => $pairCount . ' paires', 'cards' => $pairCount * 2],
+                };
+            }
+
+            $difficultyInfo = getDifficultyInfo($_SESSION['pairCount']);
+            ?>
+
+
+            <div class="game-info">
+                <p><i class="fa-solid fa-user"></i> Joueur : <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></p>
+
+                <form action="?page=game" method="POST" class="difficulty-form">
+                    <label for="pairs">
+                        <i class="fa-solid fa-puzzle-piece"></i> Niveau de difficulté :
+                    </label>
+                    <select id="pairs" name="pairs">
+                        <option value="3" <?= $_SESSION['pairCount'] == 3 ? 'selected' : '' ?>>Facile (6 cartes)</option>
+                        <option value="6" <?= $_SESSION['pairCount'] == 6 ? 'selected' : '' ?>>Moyen (12 cartes)</option>
+                        <option value="9" <?= $_SESSION['pairCount'] == 9 ? 'selected' : '' ?>>Difficile (18 cartes)</option>
+                        <option value="12" <?= $_SESSION['pairCount'] == 12 ? 'selected' : '' ?>>Expert (24 cartes)</option>
+                    </select>
+                    <button type="submit" class="btn-restart"><i class="fa-solid fa-rotate-right"></i> Rejouer</button>
+                </form>
+            </div>
+
         </header>
 
 
+
+        <!-- === PLATEAU DU JEU === -->
         <section class="board">
             <?php foreach ($cards as $index => $card): ?>
                 <div class="card" data-card="<?= $index ?>">

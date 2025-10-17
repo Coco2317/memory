@@ -1,5 +1,3 @@
-/* === NAVIGATION === */
-
 /* === PAGE D'ACCUEIL (mise en forme centrale) === */
 body.home {
     background: url('../img/background_hall.jpg') no-repeat center center fixed;
@@ -11,39 +9,23 @@ body.home {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.container {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px #ff6f00;
-}
-
-h1 {
-    margin-bottom: 20px;
-    color: #ff9800;
-}
-
-.start-form {
-    display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 250px;
-    margin: 0 auto;
+    margin: 0;
 }
 
+/* === NAVIGATION COMMUNE (HOME & PROFIL ICONS) === */
 .home-nav {
-    position: absolute;
+    position: fixed; /* ✅ cohérent avec la page du jeu */
     top: 20px;
     right: 30px;
     display: flex;
-    gap: 15px;
+    gap: 18px;
+    z-index: 1000;
 }
 
 .home-nav a {
     color: #ff9800;
-    font-size: 2rem;
+    font-size: 1.8rem;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -52,14 +34,52 @@ h1 {
     transform: scale(1.2);
 }
 
+/* === CONTENEUR PRINCIPAL === */
+.container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #ff6f00;
+    width: 90%;
+    max-width: 400px;
+}
+
+/* === TITRE === */
+h1 {
+    margin-bottom: 25px;
+    color: #ff9800;
+    text-shadow: 0 0 10px rgba(255, 152, 0, 0.6);
+    font-size: 1.8rem;
+}
+
 /* === FORMULAIRE === */
+.start-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.start-form label {
+    font-weight: 500;
+    color: #ffb84d;
+    text-align: left;
+}
+
+/* === INPUT & SELECT === */
 .start-form input,
 .start-form select {
     border: 2px solid #ff9800;
-    background: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
+    border-radius: 10px;
+    padding: 10px;
     font-size: 1rem;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .start-form input::placeholder {
@@ -72,43 +92,9 @@ h1 {
     outline: none;
 }
 
-/* === CHAMP PSEUDO === */
-.start-form input[type="text"] {
-    border: 2px solid #ff9800;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 1rem;
-    width: 100%;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
-}
-
-.start-form input[type="text"]::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.start-form input[type="text"]:focus {
-    outline: none;
-    box-shadow: 0 0 10px rgba(255, 152, 0, 0.6);
-}
-
-/* Pour un alignement parfait entre input et select */
+/* === LISTE DÉROULANTE === */
 .start-form select {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-
-/* === STYLE LISTE DÉROULANTE === */
-.start-form select {
-    border: 2px solid #ff9800;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #fff;
-    border-radius: 10px;
-    padding: 10px;
-    appearance: none; /* supprime le style natif du navigateur */
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: url("data:image/svg+xml;utf8,<svg fill='orange' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>");
@@ -117,21 +103,13 @@ h1 {
     background-size: 16px;
 }
 
-.start-form select:focus {
-    outline: none;
-    box-shadow: 0 0 10px rgba(255, 152, 0, 0.6);
-}
-
-/* Options internes */
 .start-form select option {
     background-color: #2b0f40; /* violet foncé Halloween */
     color: #fff;
 }
 
-
 /* === BOUTON "JOUER" === */
 button.btn {
-    position: relative;
     background: linear-gradient(135deg, #ff6f00, #ff9800);
     color: #fff;
     font-weight: bold;
@@ -141,7 +119,6 @@ button.btn {
     padding: 12px;
     border-radius: 12px;
     cursor: pointer;
-    overflow: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4);
 }
@@ -169,7 +146,7 @@ footer span {
 
 /* === RESPONSIVE === */
 
-/* Tablettes */
+/* Tablette */
 @media (min-width: 768px) {
     .container {
         width: 400px;
@@ -177,12 +154,11 @@ footer span {
     }
 
     .start-form {
-        width: 300px;
         gap: 15px;
     }
 
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
     }
 
     button.btn {
@@ -191,7 +167,7 @@ footer span {
     }
 }
 
-/*desktop) */
+/* Desktop */
 @media (min-width: 1200px) {
     .container {
         width: 450px;
