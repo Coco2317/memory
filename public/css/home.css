@@ -1,4 +1,4 @@
-/* === PAGE D'ACCUEIL (mise en forme centrale) === */
+/*HOMEPAGE*/
 body.home {
     background: url('../img/background_hall.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -13,9 +13,9 @@ body.home {
     margin: 0;
 }
 
-/* === NAVIGATION COMMUNE (HOME & PROFIL ICONS) === */
+/* COMMUN NAVIGATION */
 .home-nav {
-    position: fixed; /* ✅ cohérent avec la page du jeu */
+    position: fixed; 
     top: 20px;
     right: 30px;
     display: flex;
@@ -34,7 +34,7 @@ body.home {
     transform: scale(1.2);
 }
 
-/* === CONTENEUR PRINCIPAL === */
+/* MAIN CONTENT*/
 .container {
     background: rgba(0, 0, 0, 0.6);
     padding: 40px;
@@ -44,7 +44,7 @@ body.home {
     max-width: 400px;
 }
 
-/* === TITRE === */
+/*TITLE*/
 h1 {
     margin-bottom: 25px;
     color: #ff9800;
@@ -52,7 +52,7 @@ h1 {
     font-size: 1.8rem;
 }
 
-/* === FORMULAIRE === */
+/* FORM */
 .start-form {
     display: flex;
     flex-direction: column;
@@ -68,7 +68,7 @@ h1 {
     text-align: left;
 }
 
-/* === INPUT & SELECT === */
+/* INPUT & SELECT */
 .start-form input,
 .start-form select {
     border: 2px solid #ff9800;
@@ -92,7 +92,7 @@ h1 {
     outline: none;
 }
 
-/* === LISTE DÉROULANTE === */
+/* LIST FORM */
 .start-form select {
     appearance: none;
     -webkit-appearance: none;
@@ -104,11 +104,11 @@ h1 {
 }
 
 .start-form select option {
-    background-color: #2b0f40; /* violet foncé Halloween */
+    background-color: #2b0f40; 
     color: #fff;
 }
 
-/* === BOUTON "JOUER" === */
+/*PLAY BUTTON*/
 button.btn {
     background: linear-gradient(135deg, #ff6f00, #ff9800);
     color: #fff;
@@ -128,7 +128,7 @@ button.btn:hover {
     box-shadow: 0 6px 16px rgba(255, 152, 0, 0.6);
 }
 
-/* === FOOTER === */
+/*FOOTER*/
 footer {
     position: absolute;
     bottom: 10px;
@@ -146,7 +146,7 @@ footer span {
 
 /* === RESPONSIVE === */
 
-/* Tablette */
+/* TABLETTE */
 @media (min-width: 768px) {
     .container {
         width: 400px;

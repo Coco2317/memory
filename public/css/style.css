@@ -1,4 +1,4 @@
-/* === STYLES GLOBAUX === */
+/* GLOBAL STYLE*/
 html, body {
     height: 100%;
     margin: 0;
@@ -19,7 +19,7 @@ body {
     padding: 0;
 }
 
-/* === NAVIGATION COMMUNE (HOME & PROFIL ICONS) === */
+/* COMMUN SETTING*/
 .global-nav {
     position: fixed;
     top: 20px;
@@ -52,7 +52,7 @@ body {
     }
 }
 
-/* === PAGE DU JEU === */
+/* GAME PAGE */
 body.game {
     display: flex;
     flex-direction: column;
@@ -61,10 +61,10 @@ body.game {
     text-align: center;
 }
 
-/* === HEADER DU JEU === */
+/* GAME HEADER*/
 .game-header {
     text-align: center;
-    margin-top: 70px; /* espace sous les icônes fixes */
+    margin-top: 70px; 
     margin-bottom: 30px;
 }
 
@@ -96,10 +96,10 @@ body.game {
 
 
 
-/* === PLATEAU DE JEU (optimisé pour moins de scroll) === */
+/* GAME */
 .board {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); /* plus compact */
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); 
     justify-content: center;
     align-items: center;
     gap: 15px;
@@ -110,12 +110,12 @@ body.game {
     box-sizing: border-box;
 }
 
-/* === CARTES === */
+/*CARDS*/
 .card {
     perspective: 1000px;
     cursor: pointer;
     width: 100%;
-    aspect-ratio: 3 / 4; /* garde la bonne forme */
+    aspect-ratio: 3 / 4; 
     transition: transform 0.25s ease;
 }
 
@@ -159,7 +159,7 @@ body.game {
     transform: rotateY(180deg);
 }
 
-/* === FORMULAIRE DE DIFFICULTÉ (dans le jeu) === */
+/*DIFFICULTY FORM */
 .difficulty-form {
     margin-top: 10px;
     display: flex;
@@ -213,10 +213,10 @@ body.game {
 }
 
 
-/* === Responsive tuning === */
+/*Responsive tuning  */
 @media (max-width: 480px) {
     .board {
-        grid-template-columns: repeat(3, minmax(90px, 1fr)); /* 3 cartes par ligne en mobile */
+        grid-template-columns: repeat(3, minmax(90px, 1fr)); 
         gap: 10px;
     }
 }
@@ -237,7 +237,7 @@ body.game {
 
 
 
-/* === POPUP DE VICTOIRE === */
+/* VICTORY POP-UP */
 .win-overlay {
     position: fixed;
     top: 0;
@@ -299,7 +299,7 @@ body.game {
     background: #ff9800;
 }
 
-/* === CLASSEMENT === */
+/*CLASSEMENT */
 .score-table {
     width: 100%;
     border-collapse: collapse;
@@ -326,7 +326,7 @@ body.game {
     background: rgba(255,255,255,0.1);
 }
 
-/* === PROFIL JOUEUR === */
+/* PLAYER PROFIL */
 .profile-info {
     margin-top: 20px;
     background: rgba(0,0,0,0.7);
@@ -368,7 +368,7 @@ body.game {
     background: #2196f3;
 }
 
-/* === FOOTER GLOBAL === */
+/* FOOTER*/
 footer {
     text-align: center;
     font-size: 0.9rem;

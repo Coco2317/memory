@@ -13,9 +13,9 @@ class Score
         $this->db = Database::getConnection();
     }
 
-    /**
-     * Enregistre un score en base
-     */
+
+    /* Enregistre un score en base*/
+
     public function save(string $username, int $score, int $attempts): bool
     {
         $stmt = $this->db->prepare('
@@ -30,9 +30,7 @@ class Score
         ]);
     }
 
-    /**
-     * Récupère les meilleurs scores
-     */
+    /*Récupère les meilleurs scores*/
     public function getTopScores(int $limit = 10): array
     {
         $stmt = $this->db->prepare('
@@ -46,9 +44,8 @@ class Score
         return $stmt->fetchAll();
     }
 
-    /**
-     * Statistiques globales d’un joueur
-     */
+    /* Statistiques globales d’un joueur */
+
     public function getUserStats(string $username): ?array
     {
         $stmt = $this->db->prepare('
@@ -63,9 +60,8 @@ class Score
         return $stmt->fetch();
     }
 
-    /**
-     * Historique détaillé d’un joueur
-     */
+    /*Historique détaillé d’un joueur*/
+
     public function getUserHistory(string $username, int $limit = 10): array
     {
         $stmt = $this->db->prepare('

@@ -11,16 +11,16 @@
 
 <body class="game">
 
-    <!-- === NAVIGATION COMMUNE === -->
+    <!-- COMMUN NAV-->
     <nav class="global-nav">
         <a href="?page=home" title="Accueil"><i class="fa-solid fa-house"></i></a>
         <a href="?page=profile" title="Profil"><i class="fa-solid fa-user"></i></a>
     </nav>
 
-    <!-- === CONTENEUR DU JEU === -->
+    <!-- === GAME CONTAINT=== -->
     <div class="game-container">
 
-        <!-- === EN-TÊTE DU JEU === -->
+        <!-- === GAME HEADER === -->
         <header class="game-header">
             <h1><i class="fa-solid fa-ghost"></i> Memory Halloween <i class="fa-solid fa-spider"></i></h1>
 
@@ -64,7 +64,7 @@
 
 
 
-        <!-- === PLATEAU DU JEU === -->
+        <!-- === BOARD GAME === -->
         <section class="board">
             <?php foreach ($cards as $index => $card): ?>
                 <div class="card" data-card="<?= $index ?>">
