@@ -359,13 +359,13 @@ body.game {
     border-radius: 10px;
     text-decoration: none;
     color: #fff;
-    background: #1976d2;
+    background: #124e06;
     font-weight: 600;
     transition: 0.3s;
 }
 
 .btn-profile:hover {
-    background: #2196f3;
+    background: #317c22;
 }
 
 /* FOOTER*/

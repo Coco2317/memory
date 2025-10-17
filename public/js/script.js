@@ -59,7 +59,6 @@ function showWinMessage(tries) {
             <p>Score : <strong>${score}</strong></p>
             <p><i class="fa-solid fa-rotate"></i> Tentatives : ${tries}</p>
             <div class="win-buttons">
-            
                 <a href="?page=game&replay=1" class="btn-restart">
             <i class="fa-solid fa-rotate-right"></i> Rejouer
         </a>
@@ -67,7 +66,7 @@ function showWinMessage(tries) {
                     <i class="fa-solid fa-ranking-star"></i> Classement
                 </a>
                 <a href="?page=profile" class="btn-profile">
-                    <i class="fa-solid fa-user"></i> Profil joueur
+                    <i class="fa-solid fa-user"></i> Mon Profil
                 </a>
             </div>
         </div>
