@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,14 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body class="game">
+
+    <nav class="home-nav">
+        <a href="?page=home" title="Accueil"><i class="fa-solid fa-house"></i></a>
+        <a href="?page=profile" title="Profil"><i class="fa-solid fa-user"></i></a>
+    </nav>
+
     <div class="container">
         <h1><i class="fa-solid fa-user"></i> Profil joueur</h1>
 
@@ -29,7 +37,9 @@
             </thead>
             <tbody>
                 <?php if (empty($history)): ?>
-                    <tr><td colspan="4">Aucun score enregistré pour le moment.</td></tr>
+                    <tr>
+                        <td colspan="4">Aucun score enregistré pour le moment.</td>
+                    </tr>
                 <?php else: ?>
                     <?php foreach ($history as $row): ?>
                         <tr>
@@ -45,9 +55,10 @@
         <div class="profile-buttons">
             <a href="?page=home" class="btn-score"><i class="fa-solid fa-house"></i> Accueil</a>
             <a href="?page=score" class="btn-score"><i class="fa-solid fa-ranking-star"></i> Classement</a>
-            <a href="?page=game" class="btn-restart"><i class="fa-solid fa-play"></i> Nouvelle partie</a>
+            <a href="?page=game&replay=1" class="btn-restart"><i class="fa-solid fa-play"></i> Nouvelle partie</a>
         </div>
     </div>
     <?php include __DIR__ . '/footer.php'; ?>
 </body>
+
 </html>
