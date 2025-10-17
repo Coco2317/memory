@@ -53,7 +53,6 @@ function checkWin() {
     if (matchedPairs === totalPairs) {
         clearInterval(timer);
         const totalTime = Math.floor((Date.now() - startTime) / 1000);
-        const score = Math.max(1000 - (totalTime * 2 + attempts * 10), 0);
 
         setTimeout(() => {
             showWinMessage(score, totalTime, attempts);
