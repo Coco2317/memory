@@ -11,13 +11,14 @@
 
 <body class="game">
 
-    <nav class="home-nav">
+     <nav class="global-nav">
         <a href="?page=home" title="Accueil"><i class="fa-solid fa-house"></i></a>
         <a href="?page=profile" title="Profil"><i class="fa-solid fa-user"></i></a>
     </nav>
 
+
     <div class="container">
-        <h1><i class="fa-solid fa-user"></i> Profil joueur</h1>
+        <h1><i class="fa-solid fa-user"></i> Mon Profil</h1>
 
         <div class="profile-info">
             <h2><i class="fa-solid fa-ghost"></i> <?= htmlspecialchars($_SESSION['username']) ?></h2>
